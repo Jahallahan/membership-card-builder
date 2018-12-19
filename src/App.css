@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(40, 44, 52);
+}
+
+.card {
+  width: 428px;
+  height: 270px;
+  border-radius: 15px;
+  margin: 50px;
+  box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.5);
+  color: white;
+  background-image: linear-gradient(315deg, white, transparent);
+  position: relative;
+  transform: scale(1.5);
+  transform-origin: 0 0;
+}
+
+.name {
+  font-size: 24px;
+  position: absolute;
+  top: 110px;
+  left: 40px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.membership-no {
+  font-size: 18;
+  position: absolute;
+  top: 145px;
+  left: 40px;
+  opacity: 0.5;
+}
+
+.theme1 {
+  font-family: "Muli", sans-serif;
+}
+
+.theme2 {
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.theme3 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.theme4 {
+  font-family: "Noto Serif SC", serif;
+}
