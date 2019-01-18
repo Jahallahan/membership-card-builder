@@ -8,10 +8,13 @@ class App extends Component {
     this.state = {
       name: "Jack Hallahan",
       membershipPlan: "Gold plan",
+      membershipNo: "M12345678",
+      organization: "Organization name",
       theme: 1,
       color: "#349fe4",
-      secondaryColor: "#444444",
-      membershipNo: true
+      textColor: "light",
+      logo:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_TV_2015.svg/1200px-Logo_TV_2015.svg.png"
     };
   }
 
@@ -27,9 +30,39 @@ class App extends Component {
     });
   }
 
-  updateSecondaryColor(selectedColor) {
+  updateName(name) {
     this.setState({
-      secondaryColor: selectedColor
+      name: name
+    });
+  }
+
+  updateOrganization(organization) {
+    this.setState({
+      organization: organization
+    });
+  }
+
+  updateMembershipNo(membershipNo) {
+    this.setState({
+      membershipNo: membershipNo
+    });
+  }
+
+  updateMembershipPlan(membershipPlan) {
+    this.setState({
+      membershipPlan: membershipPlan
+    });
+  }
+
+  updateLogo(logo) {
+    this.setState({
+      logo: logo
+    });
+  }
+
+  updateTextColor(textColor) {
+    this.setState({
+      textColor: textColor
     });
   }
 
@@ -39,17 +72,28 @@ class App extends Component {
         <Config
           updateTheme={this.updateTheme.bind(this)}
           updateColor={this.updateColor.bind(this)}
-          updateSecondaryColor={this.updateSecondaryColor.bind(this)}
+          updateName={this.updateName.bind(this)}
+          updateMembershipNo={this.updateMembershipNo.bind(this)}
+          updateMembershipPlan={this.updateMembershipPlan.bind(this)}
+          updateOrganization={this.updateOrganization.bind(this)}
+          updateLogo={this.updateLogo.bind(this)}
+          updateTextColor={this.updateTextColor.bind(this)}
           color={this.state.color}
-          secondaryColor={this.state.secondaryColor}
+          name={this.state.name}
+          membershipPlan={this.state.membershipPlan}
+          membershipNo={this.state.membershipNo}
+          organization={this.state.organization}
+          logo={this.state.logo}
+          textColor={this.state.textColor}
         />
         <Card
           name={this.state.name}
           membershipPlan={this.state.membershipPlan}
-          theme={this.state.theme}
           color={this.state.color}
-          secondaryColor={this.state.secondaryColor}
           membershipNo={this.state.membershipNo}
+          organization={this.state.organization}
+          logo={this.state.logo}
+          textColor={this.state.textColor}
         />
       </div>
     );

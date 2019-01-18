@@ -1,69 +1,92 @@
 import React, { Component } from "react";
-import Tilt from "react-tilt";
 
 class Card extends Component {
   render() {
     const style = {
       card: {
-        background: this.props.color,
-        overflow: "Hidden"
+        position: "relative",
+        width: 375,
+        height: 215,
+        fontFamily: "Muli, sans-serif",
+        color: this.props.textColor === "dark" ? "rgba(0,0,0,0.9)" : "white",
+        margin: 50
       },
-      sheen: {
-        backgroundImage:
-          "linear-gradient(315deg, rgba(255,255,255,0.3), transparent)",
-        width: "100%",
-        height: "100%"
+      orgName: {
+        position: "absolute",
+        top: 24,
+        right: 32,
+        fontSize: 15,
+        fontWeight: "bold",
+        maxWidth: 160,
+        textAlign: "right"
       },
-      qrcode: {
-        width: "100%",
+      membershipPlan: {
+        fontSize: 12,
+        fontWeight: "normal"
+      },
+      bottomText: {
+        position: "absolute",
+        bottom: 20,
+        right: 32,
+        fontSize: 12,
+        fontWeight: "normal",
+        maxWidth: 160,
+        textAlign: "right",
+        lineHeight: 1.5
+      },
+      membershipNo: {
+        fontWeight: "bold"
+      },
+      logo: {
+        position: "absolute",
+        top: 0,
+        bottom: 0,
+        left: 32,
+        margin: "auto 0",
+        maxWidth: 140,
         height: "auto",
-        padding: 40,
-        borderRadius: 10
+        display: "block"
       }
     };
     return (
-      <Tilt
-        className="Tilt"
-        options={{ max: 15, scale: 1 }}
-        style={{ height: 270, width: 428 }}
-      >
-        <div className="Tilt-inner">
-          <div style={style.card} className={"card theme" + this.props.theme}>
-            <div style={style.sheen}>
-              <svg
-                width="428"
-                height="270"
-                viewBox="0 0 428 270"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M19 75C52.6894 75 80 47.6894 80 14C80 9.1825 79.4415 4.49543 78.3858 0H428V270H0V71.9829C5.97944 73.941 12.3661 75 19 75Z"
-                  fill={this.props.secondaryColor}
-                />
+      <div style={style.card}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="375"
+          height="215"
+          viewBox="0 0 375 215"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              fill={this.props.color}
+              d="M9.39 213.999c-5.178 0-9.39-4.215-9.39-9.395V9.396C0 4.216 4.212 0 9.39 0h356.221C370.788 0 375 4.215 375 9.396v195.209c0 5.18-4.212 9.395-9.389 9.395H9.39v-.001z"
+            />
 
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M428 61.8756C329.428 88.9878 252.891 169.299 231.2 270H428V61.8756Z"
-                  fill="rgba(0,0,0,0.2)"
-                />
-              </svg>
-
-              <span className="name" contentEditable="true">
-                {this.props.name}
-              </span>
-              {this.props.membershipNo && (
-                <span className="membership-no" contentEditable="true">
-                  M9381048
-                </span>
-              )}
-            </div>
-          </div>
+            <path
+              fill="#E1E8ED"
+              fill-rule="nonzero"
+              d="M365.135 1C370.023 1 374 4.977 374 9.865v194.557c0 4.888-3.977 8.865-8.865 8.865H9.865c-4.888 0-8.865-3.977-8.865-8.865V9.865C1 4.977 4.977 1 9.865 1h355.27zm0-1H9.865C4.439 0 0 4.439 0 9.865v194.557c0 5.426 4.439 9.865 9.865 9.865h355.271c5.426 0 9.865-4.439 9.865-9.865V9.865C375 4.439 370.561 0 365.135 0z"
+            />
+            <g>
+              <path
+                fill="#2F2E2D"
+                d="M122.789 107.48c0 39.314-10.667 75.907-29.012 106.52H6.846A9.919 9.919 0 0 1 0 208.948V5.052A9.919 9.919 0 0 1 6.846 0h86.353c18.699 30.806 29.59 67.754 29.59 107.48z"
+                opacity=".1"
+              />
+            </g>
+          </g>
+        </svg>
+        <div style={style.orgName}>
+          {this.props.organization}
+          <div style={style.membershipPlan}>{this.props.membershipPlan}</div>
         </div>
-      </Tilt>
+        <div style={style.bottomText}>
+          <div style={style.membershipNo}>{this.props.membershipNo}</div>
+          <div>{this.props.name}</div>
+          <div>17 January 2020</div>
+        </div>
+        <img src={this.props.logo} style={style.logo} />
+      </div>
     );
   }
 }

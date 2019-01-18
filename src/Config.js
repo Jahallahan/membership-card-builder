@@ -16,30 +16,73 @@ class App extends Component {
     this.setState({ color: event.target.value });
   }
 
-  updateSecondaryColor(event) {
-    this.props.updateSecondaryColor(event.target.value);
-    this.setState({ secondaryColor: event.target.value });
+  updateName(event) {
+    this.props.updateName(event.target.value);
+  }
+
+  updateOrganization(event) {
+    this.props.updateOrganization(event.target.value);
+  }
+
+  updateMembershipNo(event) {
+    this.props.updateMembershipNo(event.target.value);
+  }
+
+  updateMembershipPlan(event) {
+    this.props.updateMembershipPlan(event.target.value);
+  }
+
+  updateLogo(event) {
+    this.props.updateLogo(event.target.value);
+  }
+
+  updateTextColor(event) {
+    this.props.updateTextColor(event.target.value);
+    console.log("color changed");
   }
 
   render() {
     return (
       <div className="config">
-        <select onChange={this.updateTheme.bind(this)}>
-          <option value="1">Classic</option>
-          <option value="2">Cool</option>
-          <option value="3">Sophisticated</option>
-          <option value="4">Warm</option>
-        </select>
+        <input
+          type="text"
+          onChange={this.updateName.bind(this)}
+          value={this.props.name}
+        />
+        <input
+          type="text"
+          onChange={this.updateOrganization.bind(this)}
+          value={this.props.organization}
+        />
+
+        <input
+          type="text"
+          onChange={this.updateMembershipNo.bind(this)}
+          value={this.props.membershipNo}
+        />
+        <input
+          type="text"
+          onChange={this.updateMembershipPlan.bind(this)}
+          value={this.props.membershipPlan}
+        />
+        <input
+          type="text"
+          onChange={this.updateLogo.bind(this)}
+          value={this.props.logo}
+        />
+
         <input
           type="color"
           onChange={this.updateColor.bind(this)}
           value={this.props.color}
         />
-        <input
-          type="color"
-          onChange={this.updateSecondaryColor.bind(this)}
-          value={this.props.secondaryColor}
-        />
+        <select
+          onChange={this.updateTextColor.bind(this)}
+          value={this.props.textColor}
+        >
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
       </div>
     );
   }
