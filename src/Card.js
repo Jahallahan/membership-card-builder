@@ -21,7 +21,7 @@ class Card extends Component {
         position: "absolute",
         backgroundColor: "rgba(0,0,0,0.1)",
         borderRadius: "50%",
-        left: -467,
+        right: -467,
         top: -138
       },
       orgName: {
@@ -30,7 +30,7 @@ class Card extends Component {
         right: 32,
         fontSize: 15,
         fontWeight: "bold",
-        maxWidth: 160,
+        maxWidth: 155,
         textAlign: "right"
       },
       membershipPlan: {
@@ -43,7 +43,7 @@ class Card extends Component {
         right: 32,
         fontSize: 12,
         fontWeight: "normal",
-        maxWidth: 160,
+        maxWidth: 155,
         textAlign: "right",
         lineHeight: 1.5
       },
@@ -63,6 +63,7 @@ class Card extends Component {
     };
     return (
       <div style={style.card}>
+        <div style={style.arc} />
         <div style={style.orgName}>
           {this.props.organization}
           <div style={style.membershipPlan}>{this.props.membershipPlan}</div>
@@ -72,7 +73,7 @@ class Card extends Component {
           <div>{this.props.name}</div>
           <div>17 January 2020</div>
         </div>
-        <div style={style.arc} />
+
         <img src={this.props.logo} style={style.logo} />
       </div>
     );
