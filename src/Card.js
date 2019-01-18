@@ -12,7 +12,7 @@ class Card extends Component {
         margin: 50,
         backgroundColor: this.props.color,
         borderRadius: 10,
-        boxShadow: "0 0 2px 0 rgba(0,0,0,0.5)",
+        boxShadow: "0 0 2px 0 rgba(0,0,0,0.2)",
         overflow: "hidden"
       },
       arc: {
@@ -72,8 +72,8 @@ class Card extends Component {
           <div>{this.props.name}</div>
           <div>17 January 2020</div>
         </div>
-        <img src={this.props.logo} style={style.logo} />
         <div style={style.arc} />
+        <img src={this.props.logo} style={style.logo} />
       </div>
     );
   }
