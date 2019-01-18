@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/membership-card-builder/precache-manifest.cfc83500ec1b9551d34bf593ceb6a79c.js"
+  "/membership-card-builder/precache-manifest.1eabfc42d52759624f15e5f60f38afee.js"
 );
 
 workbox.clientsClaim();
