@@ -42,8 +42,11 @@ class App extends Component {
   }
 
   render() {
+    const configStyle = {
+      flexGrow: 0
+    };
     return (
-      <div className="config">
+      <div className="config" style={configStyle}>
         <input
           type="text"
           onChange={this.updateName.bind(this)}

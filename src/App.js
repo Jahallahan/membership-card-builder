@@ -67,8 +67,17 @@ class App extends Component {
   }
 
   render() {
+    const pageStyle = {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100vh",
+      width: "100vw",
+      flexDirection: "column"
+    };
+
     return (
-      <div className="App">
+      <div className="App" style={pageStyle}>
         <Config
           updateTheme={this.updateTheme.bind(this)}
           updateColor={this.updateColor.bind(this)}
